@@ -10,6 +10,10 @@ const io = socketIo(server);
 app.use(cors()); // Use the CORS middleware to allow cross-origin requests
 app.use(express.static(__dirname + "/public"));
 
+app.get("/",(req,res)=>{
+    res.status(200).json("server starts")
+})
+
 io.on("connection", (socket) => {
   console.log("User connected");
 
